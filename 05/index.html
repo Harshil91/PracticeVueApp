@@ -5,7 +5,8 @@
   <body>
     <h1>Practice Vue App</h1>
     <div id="app">
-      {{ num }}
+      <p>{{ num }}</p>
+      <button v-on:click="num = Math.random()">Regenerate</button>
     </div>
     
     <p><i>This is the page footer</i></p>
