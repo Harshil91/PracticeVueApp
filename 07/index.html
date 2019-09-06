@@ -5,8 +5,9 @@
   <body>
     <h1>Practice Vue App</h1>
     <div id="app">
-      <p>{{ num }}</p>
-      <button v-on:mouseover="num = Math.random()">Regenerate</button>
+      <ul>
+        <li v-for="item in todos">{{ item }}</li>
+      </ul>
     </div>
     
     <p><i>This is the page footer</i></p>
@@ -16,7 +17,11 @@
       let app = new Vue({
         el: "#app",
         data: {
-          num: 0,
+          todos: [
+            "mow the lawn",
+            "pay the bills",
+            "Clean the garage"
+          ],
         },
       });
     </script>
