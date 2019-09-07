@@ -1,12 +1,17 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <style>
+      .list-item {
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <h1>Practice Vue App</h1>
     <div id="app">
       <ul>
-        <li v-for="item in todos" v-on:"click"= "item.done = !item.done">
+        <li class="list-item" v-for="item in todos" v-on:"click"= "item.done = !item.done">
           <span v-if="item.done">
             <s></s>{{ item.text }}</s>
           </span>
