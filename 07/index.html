@@ -6,9 +6,13 @@
     <h1>Practice Vue App</h1>
     <div id="app">
       <ul>
-        <li v-for="item in todos">
-          <span>
+        <li v-for="item in todos" v-on:"click"= "item.done = !item.done">
+          <span v-if="item.done">
             <s></s>{{ item.text }}</s>
+          </span>
+
+          <span v-else>
+            {{ item.text }}
           </span>
           
         </li>
