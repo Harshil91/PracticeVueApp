@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      .list-item {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Practice Vue App</h1>
+    <div id="app">
+      <ul>
+        <li class="list-item" v-for="item in todos" v-on:"click"= "item.done = !item.done">
+          <span v-if="item.done">
+            <s></s>{{ item.text }}</s>
+          </span>
+
+          <span v-else>
+            {{ item.text }}
+          </span>
+          
+        </li>
+      </ul>
+    </div>
+    
+    <p><i>This is the page footer</i></p>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+
+    <script>
+      let app = new Vue({
+        el: "#app",
+        data: {
+          todos: [
+            { text: "mow the lawn", done: false},
+            { text: "pay the bills", done: false},
+            { text: "Clean the garage", done: false},
+          ],
+        },
+      });
+    </script>
+  </body>
+  
+</html>
