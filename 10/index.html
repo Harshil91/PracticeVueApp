@@ -1,0 +1,70 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .list-item {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Practice Vue App</h1>
+  <div id="app">
+    <h3>Not Done Todos</h3>
+    <ul>
+      <li class="list-item" v-for="item in notDoneTodos" v-on:"click"="item.done = !item.done">
+        {{ item.text }}
+      </li>
+    </ul>
+
+    <h3>Done Todos</h3>
+    <ul>
+      <li class="list-item" v-for="item in doneTodos" v-on:"click"="item.done = !item.done">
+        <s>{{ item.text }}</s>
+      </li>
+    </ul>
+  </div>
+
+  <p><i>This is the page footer</i></p>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+
+  <script>
+    let app = new Vue({
+      el: "#app",
+      data: {
+        todos: [
+          { text: "mow the lawn", done: false },
+          { text: "pay the bills", done: false },
+          { text: "Clean the garage", done: false },
+        ],
+      },
+
+      computed: {
+        notDoneTodos: function () {
+          let out = [];
+          for (let i = 0; i < this.todos.length; i++) {
+            let item = this.todos[i];
+            if (!item.done) out.push(item);
+          }
+
+          return out;
+        },
+
+
+        doneTodos: function () {
+          let out = [];
+          for (let i = 0; i < this.todos.length; i++) {
+            let item = this.todos[i];
+            if (item.done) out.push(item);
+          }
+
+          return out;
+        },
+      },
+    });
+  </script>
+</body>
+
+</html>
