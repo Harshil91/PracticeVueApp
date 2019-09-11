@@ -51,7 +51,13 @@
 
 
           doneTodos: function (){
+            let out = [];
+            for (let i = 0; i < this.todos.length; i++) {
+              let item = this.todos[i];
+              if (item.done) out.push(item);
+            }
 
+            return out;
           },
         },
       });
