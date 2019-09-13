@@ -82,7 +82,10 @@
         },
 
         addNewTodo: function(){
-
+          this.todos.push({
+            text: this.newTodo,
+            done: false,
+          });
         },
       },
     
