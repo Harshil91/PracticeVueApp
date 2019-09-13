@@ -14,7 +14,7 @@
   <div id="app">
     <div>
       <input type="text" v-model="newTodo">
-      <button>Add</button>
+      <button v-on:click="addNewTodo">Add</button>
     </div>
 
 
@@ -48,6 +48,7 @@
           { text: "Clean the garage", done: false },
         ],
         
+        newTodo: "exercise",
 
       },
 
@@ -78,6 +79,10 @@
         toggleItem: function(item){
           item.done = !item.done;
           console.log("Saved");
+        },
+
+        addNewTodo: function(){
+
         },
       },
     
