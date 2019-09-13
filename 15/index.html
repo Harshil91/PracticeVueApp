@@ -20,12 +20,12 @@
 
     <h3>Not Done Todos</h3>
     <ul>
-      <todo-list-item></todo-list-item>
+      <todo-list-item v-for="item in notDoneTodos" ></todo-list-item>
     </ul>
 
     <h3>Done Todos</h3>
     <ul>
-      <todo-list-item></todo-list-item>
+      <todo-list-item v-for="item in doneTodos" ></todo-list-item>
     </ul>
   </div>
 
@@ -34,7 +34,11 @@
 
   <script>
     Vue.component("todo-list-item", {
-
+      template: `
+      <li class="list-item" v-on:click="toggleItem(item)">
+        {{ item.text }}
+      </li>
+      `,
     });
 
     let app = new Vue({
