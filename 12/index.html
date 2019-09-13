@@ -12,6 +12,12 @@
 <body>
   <h1>Practice Vue App</h1>
   <div id="app">
+    <div>
+      <input type="text" v-model="newTodo">
+      <button>Add</button>
+    </div>
+
+
     <h3>Not Done Todos</h3>
     <ul>
       <li class="list-item" v-for="item in notDoneTodos" 
@@ -41,6 +47,8 @@
           { text: "pay the bills", done: false },
           { text: "Clean the garage", done: false },
         ],
+        
+
       },
 
       computed: {
