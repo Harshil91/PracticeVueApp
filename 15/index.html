@@ -20,18 +20,12 @@
 
     <h3>Not Done Todos</h3>
     <ul>
-      <li class="list-item" v-for="item in notDoneTodos" 
-      v-on:click="toggleItem(item)">
-        {{ item.text }}
-      </li>
+      <todo-list-item></todo-list-item>
     </ul>
 
     <h3>Done Todos</h3>
     <ul>
-      <li class="list-item" v-for="item in doneTodos" 
-      v-on:click="toggleItem(item)">
-        <s>{{ item.text }}</s>
-      </li>
+      <todo-list-item></todo-list-item>
     </ul>
   </div>
 
@@ -39,6 +33,10 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
 
   <script>
+    Vue.component("todo-list-item", {
+
+    });
+
     let app = new Vue({
       el: "#app",
       data: {
