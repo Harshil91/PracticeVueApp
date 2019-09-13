@@ -15,14 +15,15 @@
     <h3>Not Done Todos</h3>
     <ul>
       <li class="list-item" v-for="item in notDoneTodos" 
-      v-on:"click"="item.done = !item.done">
+      v-on:click="toggleItem(item)">
         {{ item.text }}
       </li>
     </ul>
 
     <h3>Done Todos</h3>
     <ul>
-      <li class="list-item" v-for="item in doneTodos" v-on:"click"="item.done = !item.done">
+      <li class="list-item" v-for="item in doneTodos" 
+      v-on:click="toggleItem(item)">
         <s>{{ item.text }}</s>
       </li>
     </ul>
